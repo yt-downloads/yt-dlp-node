@@ -1,0 +1,38 @@
+{
+    "name": "yt-dlp-node",
+    "version": "1.0.0",
+    "description": "A Node.js wrapper for yt-dlp, enabling advanced video and audio downloading with seamless integration and customization options.",
+    "main": "dist/index.js",
+    "types": "dist/types/index.d.ts",
+    "author": "Sikandar <sikandar.moyal.dev@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "build": "tsc",
+        "prepare": "npm run build"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.7",
+        "typescript": "^5.4.5"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sikandarmoyaldev/yt-dlp-node.git"
+    },
+    "keywords": [
+        "yt-dlp",
+        "node",
+        "video-downloader",
+        "audio-downloader",
+        "youtube-dl",
+        "media-downloader",
+        "typescript",
+        "nodejs"
+    ],
+    "bugs": {
+        "url": "https://github.com/sikandarmoyaldev/yt-dlp-node/issues"
+    },
+    "homepage": "https://github.com/sikandarmoyaldev/yt-dlp-node#readme",
+    "files": [
+        "dist/**/*"
+    ]
+}
