@@ -7,6 +7,9 @@ dist/
 .cache/
 temp/
 
+# executable file
+/bin
+
 # IDE and editor files
 .vscode/
 .idea/
