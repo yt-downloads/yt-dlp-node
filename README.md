@@ -7,7 +7,7 @@ This repository contains an npm package that serves as a Node.js wrapper for [yt
 You can install the package via `npm`. Run the following command:
 
 ```bash
-npm install git+https://github.com/sikandarmoyaldev/yt-dlp-node.git
+npm install git+https://github.com/yt-downloads/yt-dlp-node.git
 ```
 
 ## Features

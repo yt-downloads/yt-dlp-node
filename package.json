@@ -21,7 +21,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/sikandarmoyaldev/yt-dlp-node.git"
+        "url": "https://github.com/yt-downloads/yt-dlp-node.git"
     },
     "keywords": [
         "yt-dlp",
@@ -34,9 +34,9 @@
         "nodejs"
     ],
     "bugs": {
-        "url": "https://github.com/sikandarmoyaldev/yt-dlp-node/issues"
+        "url": "https://github.com/yt-downloads/yt-dlp-node/issues"
     },
-    "homepage": "https://github.com/sikandarmoyaldev/yt-dlp-node#readme",
+    "homepage": "https://github.com/yt-downloads/yt-dlp-node#readme",
     "files": [
         "dist/**/*"
     ]
