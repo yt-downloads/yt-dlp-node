@@ -3,7 +3,7 @@ import ffmpeg from "fluent-ffmpeg";
 import { promisify } from "node:util";
 import { exec } from "node:child_process";
 
-import { extractVideoId } from "../utils";
+import { extractVideoIdFromUrl } from "../utils";
 
 
 // Promisify exec for async/await
@@ -12,6 +12,10 @@ const execPromise = promisify(exec);
 
 // Available Audio Bitrate
 export type AudioBitrate = "48k" | "128k" | "192k"  | "256k" | "320k";
+
+
+// Available options of audio bitrate
+export const AUDIO_BITRATE_OPTIONS: AudioBitrate[] = ["48k", "128k", "192k", "256k", "320k"];
 
 
 // Converts a `.webm` audio/video file to `.mp3` format with a specified audio bitrate.
@@ -48,7 +52,7 @@ export async function downloadAudioFile(
 
     try {
         // Extract the video ID
-        const videoId = extractVideoId(options.videoUrl);
+        const videoId = extractVideoIdFromUrl(options.videoUrl);
         if (!videoId) {
             throw new Error("Invalid YouTube URL: Unable to extract video ID.");
         };

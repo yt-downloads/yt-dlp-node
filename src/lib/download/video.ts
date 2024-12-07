@@ -3,7 +3,7 @@ import ffmpeg from "fluent-ffmpeg";
 import { promisify } from "node:util";
 import { exec } from "node:child_process";
 
-import { extractVideoId } from "../utils";
+import { extractVideoIdFromUrl } from "../utils";
 
 
 // Promisify exec to use async/await syntax
@@ -12,6 +12,10 @@ const execPromise = promisify(exec);
 
 // Available Video Quality
 export type VideoQuality = "144p" | "240p" | "360p" | "480p" | "720p" | "1080p" | "1440p" | "2160p";
+
+
+// Available options of video quality
+export const VIDEO_QUALITY_OPTIONS: VideoQuality[] = ["144p", "240p", "360p", "480p", "720p", "1080p", "1440p", "2160p"];
 
 
 // Converts a `.webm` audio/video file to `.mp4` file.
@@ -47,7 +51,7 @@ export async function downloadVideoFile(
 
     try {
         // Extract the video ID
-        const videoId = extractVideoId(options.videoUrl);
+        const videoId = extractVideoIdFromUrl(options.videoUrl);
         if (!videoId) {
             throw new Error("Invalid YouTube URL: Unable to extract video ID.");
         };
