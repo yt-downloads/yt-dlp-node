@@ -11,6 +11,10 @@ import {
     type AudioBitrate,
     downloadAudioFile as _downloadAudioFile,
 } from "./lib/download/audio";
+import { 
+    type VideoQuality,
+    downloadVideoFile as _downloadVideoFile,
+} from "./lib/download/video";
 
 
 export default class YTDLP {
@@ -56,6 +60,20 @@ export default class YTDLP {
         }
     ) {
         const options = { ytDlpPath: this.executablePath, ...userOptions };
-        return _downloadAudioFile(options);
+        return await _downloadAudioFile(options);
+    };
+
+
+    // Downloads a video file from the specified URL in the desired quality.
+    public async downloadVideoFile(
+        userOptions: {
+            dst?: string;
+            videoUrl: string;
+            verbose?: boolean;
+            quality: VideoQuality;
+        }
+    ) {
+        const options = { ytDlpPath: this.executablePath, ...userOptions };
+        return await _downloadVideoFile(options);
     };
 };

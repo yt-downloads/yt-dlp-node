@@ -10,7 +10,7 @@ import { extractVideoId } from "../utils";
 const execPromise = promisify(exec);
 
 
-// Available Audio Qualities
+// Available Audio Bitrate
 export type AudioBitrate = "48k" | "128k" | "192k"  | "256k" | "320k";
 
 
@@ -68,7 +68,6 @@ export async function downloadAudioFile(
             console.log(`[download]: Video URL - ${options.videoUrl}`);
         };
 
-        // Generate a timestamp-based file basename to avoid conflicts
         const basename = videoId;
 
         // Construct the yt-dlp command to download the best audio format
