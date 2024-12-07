@@ -2,7 +2,6 @@ import os from "node:os";
 import fs from "node:fs";
 import axios from "axios";
 import path from "node:path";
-import { chroma } from "chroma";
 
 
 // Function to download a file using a URL and save it to a given destination
@@ -84,13 +83,13 @@ export async function downloadYTDLP(
 
     // Log the download URL and platform message
     console.log(`[download]: Starting downloading yt-dlp for ${options.platform}.`);
-    chroma.secondary(`[download]: ${downloadUrl}`);
+    console.log(`[download]: ${downloadUrl}`);
     
     try {
-        // await downloadFile(downloadUrl, executablePath);
-        chroma.success(`Destination: ${executablePath}`);
+        await downloadFile(downloadUrl, executablePath);
+        console.log(`Destination: ${executablePath}`);
     } catch (error: any) {
-        chroma.error("Error while downloading yt-dlp:", error.message);
+        console.log("Error while downloading yt-dlp:", error.message);
         throw error; // Re-throw to allow further handling by the caller if needed
     };
 };
