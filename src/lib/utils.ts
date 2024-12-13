@@ -10,3 +10,9 @@ export function extractVideoIdFromUrl(videoUrl: string) {
         return null;
     };
 };
+
+
+// Generates a YouTube video URL from a video ID
+export function generateYouTubeUrl(videoId: string) {
+    return `https://www.youtube.com/watch?v=${videoId}`;
+};
